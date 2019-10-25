@@ -1,0 +1,22 @@
+doctype html
+head
+    title Add Product Review
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js')
+.container
+    h2 Add Product Review
+    h3=products.name
+    img.img-thumbnail(width='200px', height='200px', src='/uploads/'+products.image)
+    form(action='/review', method='post')
+        .form-group
+            label Description
+            textarea#exampleFormControlTextarea1.form-control(rows='3' name='review')
+            input(type='hidden', name='product_id', value=id)
+        button.btn.btn-success(type='submit') Add Review
+        br
+        br
+        a(href='/home')
+            button.btn.btn-dark(type='button') Back to product page

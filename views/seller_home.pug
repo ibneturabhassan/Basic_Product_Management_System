@@ -1,0 +1,40 @@
+doctype html
+head
+    title Product List
+    meta(charset='utf-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+    link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js')
+    style.
+        .table > tbody > tr > td {
+            vertical-align: middle;
+        }
+.container
+    h2 Product List
+    a(href='/add-product')
+        button.btn.btn-success(type='button') Add Product
+    a(href='/logout')
+        button.btn.btn-warning(type='button') Logout
+    table.table.table-hover
+        thead
+            tr
+                th Name
+                th Description
+                th Price
+                th Category
+                th Image
+                th Actions
+        tbody
+            each product in products
+                tr
+                    td=product.name
+                    td=product.desc
+                    td=product.price
+                    td=product.category
+                    td
+                        img.img-thumbnail(width='100px' height='100px' src='/uploads/'+product.image)
+                    td
+                        a(href='/update/'+product._id) Edit
+                        |
+                        a(href='/remove/'+product._id) Delete

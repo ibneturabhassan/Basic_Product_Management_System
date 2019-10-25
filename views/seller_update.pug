@@ -1,0 +1,32 @@
+doctype html
+head
+    title Add Product
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js')
+.container
+    h2 Add Product
+    form(action='/update_data', method='post', enctype='multipart/form-data')
+        .form-group
+            label Name
+            input.form-control(type='text', name='name', value=products.name)
+        .form-group
+            label Description
+            input.form-control(type='text', name='desc', value=products.desc)
+        .form-group
+            label Price
+            input.form-control(type='text', name='price', value=products.price)
+        .form-group
+            label Category
+            input.form-control(type='text', name='category', value=products.category)
+            input(type='hidden', name='product_id', value=id)
+        .form-group
+            label Image
+            input.form-control(type='file', name='image')
+        button.btn.btn-success(type='submit') Update
+        br
+        br
+        a(href='/home')
+            button.btn.btn-dark(type='button') Back to product page

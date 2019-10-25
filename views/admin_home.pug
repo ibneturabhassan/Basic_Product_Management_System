@@ -1,0 +1,35 @@
+doctype html
+head
+    title Admin Panel - User List
+    meta(charset='utf-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+    link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js')
+    style.
+        .table > tbody > tr > td {
+            vertical-align: middle;
+        }
+.container
+    h2 Admin Panel - User List
+    a(href='/add-user')
+        button.btn.btn-success(type='button') Add User
+    a(href='/logout')
+        button.btn.btn-warning(type='button') Logout
+    table.table.table-hover
+        thead
+            tr
+                th Username
+                th Role
+                th Action
+        tbody
+            each user in users
+                tr
+                    td=user.username
+                    if user.user_role == 1
+                        td Seller
+                    else
+                        td Buyer
+                    td
+                        a(href='/roles/'+user._id) Change role
+

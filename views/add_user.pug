@@ -1,0 +1,27 @@
+doctype html
+head
+    title Add User
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js')
+.container
+    h2 Add User
+    form(action='/add-user', method='post')
+        .form-group
+            label Username
+            input.form-control(type='text', placeholder='Enter username', name='username')
+        .form-group
+            label Password
+            input.form-control(type='password', placeholder='Enter password', name='pass')
+        .form-group
+            label User Role
+            select.form-control(name='user_role')
+                option(value='1') Seller
+                option(value='2') Buyer
+        button.btn.btn-success(type='submit') Add User
+        br
+        br
+        a(href='/home')
+            button.btn.btn-dark(type='button') Back to home page
